@@ -1,0 +1,20 @@
+pipeline:
+  name: test-test
+  identifier: testtest
+  projectIdentifier: default_project
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: account.CIPHERTron
+        repoName: harness-ci-js
+        build: <+input>
+  stages:
+    - stage:
+        name: test
+        identifier: test
+        template:
+          templateRef: account.Test_Template
+          versionLabel: V1
+          gitBranch: master
