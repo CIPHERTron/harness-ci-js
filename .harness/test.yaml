@@ -4,17 +4,16 @@ pipeline:
   projectIdentifier: default_project
   orgIdentifier: default
   tags: {}
+  stages:
+    - stage:
+        name: test
+        identifier: test
+        template:
+          templateRef: account.remote_template
+          versionLabel: V1
   properties:
     ci:
       codebase:
         connectorRef: account.CIPHERTron
         repoName: harness-ci-js
         build: <+input>
-  stages:
-    - stage:
-        name: test
-        identifier: test
-        template:
-          templateRef: account.Test_Template
-          versionLabel: V1
-          gitBranch: master
